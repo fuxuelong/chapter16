@@ -1,0 +1,12 @@
+server:
+  port: 8762
+turbine:
+  aggregator:
+    cluster-config: default
+  app-config: user-service , blog-service
+  cluster-name-expression: new String("default")
+
+eureka:
+  client:
+    service-url:
+      defaultzone: http://localhost:8761/eureka/

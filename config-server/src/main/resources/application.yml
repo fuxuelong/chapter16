@@ -10,3 +10,13 @@ spring:
           search-locations: classpath:/shared
   application:
     name: config-server
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+logging:
+  file: "logs/config-server.log"

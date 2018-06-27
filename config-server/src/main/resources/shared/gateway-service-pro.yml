@@ -1,0 +1,29 @@
+server:
+  port: 5000
+eureka:
+  client:
+    service-url:
+      defalutzone: http://localhost:8761/eureka/
+zuul:
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+  routes:
+    user-service:
+      path: /userapi/**
+      serviceId: user-service
+      sensitiveHeaders:
+    blogservice:
+      path: /blogapi/**
+      serviceId: blog-service
+      sensitiveHeaders:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+logging:
+  file: "logs/gateway-service.log"

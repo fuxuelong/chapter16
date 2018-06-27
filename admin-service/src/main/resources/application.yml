@@ -6,4 +6,4 @@ spring:
   profiles:
     active: pro
   application:
-    name: monitoring-service
+    name: admin-service

@@ -7,3 +7,12 @@ spring:
       fail-fast: true
   profiles:
     active: pro
+  security:
+    user:
+      password: 123456
+      name: user
+eureka:
+  instance:
+    metadata-map:
+      user.name: user
+      user.password: 123456

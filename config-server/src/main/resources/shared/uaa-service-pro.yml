@@ -1,17 +1,27 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chapter16?useUnicode=true&charecterEncoding=utf8&characterSetResult=utf8&useSSL=false
+    username: root
+    password: 12345678
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  sleuth:
+    web:
+      client:
+        enabled: true #打开sleuth客户端功能
+    sampler:
+      probability: 1.0 #将采样比设置为1，全部采样，默认为0.1
+  zipkin:
+    base-url: http://localhost:9412/ #指定链路追踪服务地址
 server:
   port: 9999
 eureka:
   client:
     service-url:
       defalutzone: http://localhost:8761/eureka/
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: always
 logging:
   file: "logs/uaa-service.log"
+

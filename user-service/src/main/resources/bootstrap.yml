@@ -7,3 +7,20 @@ spring:
     active: pro
   application:
     name: user-service
+  sleuth:
+    web:
+      client:
+        enabled: true #\u6253\u5F00sleuth\u5BA2\u6237\u7AEF\u529F\u80FD
+    sampler:
+      probability: 1.0 #\u5C06\u91C7\u6837\u6BD4\u8BBE\u7F6E\u4E3A1\uFF0C\u5168\u90E8\u91C7\u6837\uFF0C\u9ED8\u8BA4\u4E3A0.1
+  zipkin:
+    base-url: http://localhost:9412/
+  security:
+      user:
+        password: 123456
+        name: user
+eureka:
+  instance:
+    metadata-map:
+      user.name: user
+      user.password: 123456

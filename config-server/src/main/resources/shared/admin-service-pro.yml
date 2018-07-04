@@ -6,4 +6,12 @@ eureka:
       defalutzone: http://localhost:8761/eureka/
 logging:
   file: "logs/admin-service.log"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+        health:
+          show-details: always
 
